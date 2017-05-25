@@ -15,6 +15,12 @@ namespace Animals
         Category category = new Category(Request.Form["new_category"]);
         return View["index.cshtml", Category.GetAllCategories()];
       };
+      Get["/category/{id}"] = _ => parameters {
+        Dictionary<string, object> = new Dictionary<string, object>{};
+         Category category = Category.FindCategory(parameters.id);
+         List<Animal> animals = category.GetCategoryAnimals();
+        return View["show_category_animals.cshtml", should be dictionary];
+      };
     }
   }
 }

@@ -32,5 +32,9 @@ namespace Animals.Objects
     {
       return _animals;
     }
+    public static Category FindCategory(int SearchId)
+    {
+      return _lists[SearchId-1];
+    }
   }
 }
