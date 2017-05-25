@@ -1,0 +1,16 @@
+<h1>Animal Categories</h1>
+<form action="index.html" method="post">
+  <label for="new_category">Add new category:</label>
+  <input type="text" name="new_category">
+  <button type="submit" name="button">Add</button>
+</form>
+@if(@Model.Count == 0)
+{
+  <h2>Category list is empty</h2>
+} else
+{
+  @foreach (var item in @Model)
+  {
+    <p><a href="/categories/@Model.GetId()">@Model.GetCategoryName()</a></p>
+  }  
+}
