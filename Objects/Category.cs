@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-namespace Animals
+namespace Animals.Objects
 {
   public class Category
   {
     private static List<Category> _lists = new List<Category> {};
     private string _categoryName;
     private int _id;
-    private List<Animal> _animals = new List<Animals> {};
+    private List<Animal> _animals = new List<Animal> {};
 
     public Category(string name)
     {
@@ -23,6 +23,10 @@ namespace Animals
     public int GetId()
     {
       return _id;
+    }
+    public static List<Category> GetAllCategories()
+    {
+      return _lists;
     }
     public List<Animal> GetCategoryAnimals()
     {

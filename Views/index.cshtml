@@ -1,5 +1,5 @@
 <h1>Animal Categories</h1>
-<form action="index.html" method="post">
+<form action="/" method="post">
   <label for="new_category">Add new category:</label>
   <input type="text" name="new_category">
   <button type="submit" name="button">Add</button>
@@ -11,6 +11,6 @@
 {
   @foreach (var item in @Model)
   {
-    <p><a href="/categories/@Model.GetId()">@Model.GetCategoryName()</a></p>
-  }  
+    <p><a href="/categories/@item.GetId()">@item.GetCategoryName()</a></p>
+  }
 }
